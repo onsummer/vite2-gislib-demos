@@ -7,12 +7,12 @@
 - openlayers@6.5
 - cesium.js@1.81
 - leaflet@1.7.1
-- mapboxgl（todo）
+- mapboxgl@1.13.1
 - openglobus（todo）
 
 
 
-## *Cesium 项目额外注意
+## ① Cesium 项目额外注意
 
 要配置 `window` 下的全局属性 `CESIUM_BASE_URL`，你可以看到我在 `index.html` 中写多了一个 `<script>` 标签。
 
@@ -28,8 +28,22 @@ window['CESIUM_BASE_URL'] = `path/to/cesium/Source/`
 
 
 
+## ② mapboxgl 注意
+
+- 替换你的访问令牌方可使用
+- 推荐使用社区分支 [maplibre-gl](https://github.com/maplibre/maplibre-gl-js)，是 mapbox-gl 在 2.0 版本开始修改开源协议之后的一个不错的分支
+
+
+
 # 2 TODO
 
-- 添加 mapboxgl 示例
 - 添加 openglobus 示例
+- 使用 svelte 试写一次
 
+
+
+# 3 为什么不用封装好的组件库
+
+例如，openlayers 可以使用 [rlayers](https://www.npmjs.com/package/rlayers)，leaflet 可以使用 [react-leaflet](https://www.npmjs.com/package/react-leaflet) 或 [vue2-leaflet](https://www.npmjs.com/package/vue2-leaflet)
+
+是因为我希望原汁原味，无它
