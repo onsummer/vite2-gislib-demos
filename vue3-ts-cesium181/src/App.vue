@@ -1,27 +1,38 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <div id="cesium-container" :ref="cesiumRefFn"></div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+import { defineComponent, onMounted } from 'vue'
+import { Viewer } from 'cesium'
+import '../node_modules/cesium/Source/Widgets/widgets.css'
 
+let viewer: Viewer
 export default defineComponent({
   name: 'App',
-  components: {
-    HelloWorld
+  setup() {
+
+    let cesiumRef: Element
+    const cesiumRefFn = (el: any) => {
+      cesiumRef = el
+    }
+
+    onMounted(() => {
+      viewer = new Viewer(cesiumRef)
+    })
+
+    return {
+      cesiumRefFn
+    }
   }
 })
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+#cesium-container {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
 }
 </style>

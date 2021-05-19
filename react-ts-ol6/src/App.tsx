@@ -1,45 +1,30 @@
-import React, { useState } from 'react'
-import logo from './logo.svg'
+import React, { useEffect, useRef } from 'react'
+import { Map, View } from 'ol'
+import { Tile as TileLayer } from 'ol/layer'
+import { OSM as OSMSource } from 'ol/source'
+import { fromLonLat } from 'ol/proj'
+import '../node_modules/ol/ol.css'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  let map: Map
+  const mapContainerDomRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    map = new Map({
+      target: mapContainerDomRef.current as HTMLDivElement,
+      layers: [
+        new TileLayer({
+          source: new OSMSource()
+        })
+      ],
+      view: new View({
+        center: fromLonLat([112.5, 22.3]),
+        zoom: 7
+      })
+    })
+  }, [])
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
-  )
+  return <div id="ol-container" ref={mapContainerDomRef}></div>
 }
 
 export default App

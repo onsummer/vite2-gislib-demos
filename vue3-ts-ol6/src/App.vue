@@ -1,27 +1,49 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <div id="ol-container" :ref="olDivRefFn"></div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+import { defineComponent, onMounted } from 'vue'
+import { Map, View } from 'ol';
+import { Tile as TileLayer } from 'ol/layer';
+import { OSM as OSMSource } from 'ol/source';
+import { fromLonLat } from 'ol/proj';
+import '../node_modules/ol/ol.css'
 
 export default defineComponent({
   name: 'App',
-  components: {
-    HelloWorld
+  setup() {
+    let olDivRef: HTMLElement
+    let map: Map
+    const olDivRefFn = (el: any) => {
+      olDivRef = el
+    }
+
+    onMounted(() => {
+      map = new Map({
+        target: olDivRef as HTMLElement,
+        layers: [
+          new TileLayer({
+            source: new OSMSource()
+          })
+        ],
+        view: new View({
+          center: fromLonLat([112.5, 22.3]),
+          zoom: 7
+        })
+      })
+    })
+
+    return {
+      olDivRefFn
+    }
   }
 })
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #ol-container {
+    width: 100vw;
+    height: 100vh;
+  }
 </style>
