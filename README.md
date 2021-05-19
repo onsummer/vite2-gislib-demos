@@ -6,7 +6,7 @@
 
 - openlayers@6.5
 - cesium.js@1.81
-- leaflet@1.7（todo）
+- leaflet@1.7.1
 - mapboxgl（todo）
 - openglobus（todo）
 
@@ -30,7 +30,6 @@ window['CESIUM_BASE_URL'] = `path/to/cesium/Source/`
 
 # 2 TODO
 
-- 添加 leaflet 示例
 - 添加 mapboxgl 示例
 - 添加 openglobus 示例
 
