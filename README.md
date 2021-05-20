@@ -8,7 +8,7 @@
 - cesium.js@1.81
 - leaflet@1.7.1
 - mapboxgl@1.13.1
-- openglobus（todo）
+- openglobus@0.8.10
 
 
 
@@ -35,9 +35,14 @@ window['CESIUM_BASE_URL'] = `path/to/cesium/Source/`
 
 
 
-# 2 TODO
+## ③ openglobus 注意
 
-- 添加 openglobus 示例
+因为 openglobus 在我初次写时还没有类型定义库，所以用的是 JavaScript 来写。初始视角用的是官方默认的。
+
+
+
+# 2 Future
+
 - 使用 svelte 试写一次
 
 
@@ -46,4 +51,4 @@ window['CESIUM_BASE_URL'] = `path/to/cesium/Source/`
 
 例如，openlayers 可以使用 [rlayers](https://www.npmjs.com/package/rlayers)，leaflet 可以使用 [react-leaflet](https://www.npmjs.com/package/react-leaflet) 或 [vue2-leaflet](https://www.npmjs.com/package/vue2-leaflet)
 
-是因为我希望原汁原味，无它
+是因为我希望原汁原味，无它。
