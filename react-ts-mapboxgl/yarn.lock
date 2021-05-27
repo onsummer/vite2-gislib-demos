@@ -264,13 +264,13 @@
 
 "@types/geojson@*":
   version "7946.0.7"
-  resolved "https://registry.nlark.com/@types/geojson/download/@types/geojson-7946.0.7.tgz?cache=0&sync_timestamp=1621241246852&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fgeojson%2Fdownload%2F%40types%2Fgeojson-7946.0.7.tgz#c8fa532b60a0042219cdf173ca21a975ef0666ad"
+  resolved "https://registry.nlark.com/@types/geojson/download/@types/geojson-7946.0.7.tgz#c8fa532b60a0042219cdf173ca21a975ef0666ad"
   integrity sha1-yPpTK2CgBCIZzfFzyiGpde8GZq0=
 
-"@types/mapbox-gl@1.13.0":
-  version "1.13.0"
-  resolved "https://registry.nlark.com/@types/mapbox-gl/download/@types/mapbox-gl-1.13.0.tgz?cache=0&sync_timestamp=1621241937883&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fmapbox-gl%2Fdownload%2F%40types%2Fmapbox-gl-1.13.0.tgz#914836d0ea5d1a433252c8debeef75d410c3d062"
-  integrity sha1-kUg20OpdGkMyUsjevu911BDD0GI=
+"@types/mapbox-gl@1.13":
+  version "1.13.1"
+  resolved "https://registry.nlark.com/@types/mapbox-gl/download/@types/mapbox-gl-1.13.1.tgz?cache=0&sync_timestamp=1621241797834&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fmapbox-gl%2Fdownload%2F%40types%2Fmapbox-gl-1.13.1.tgz#bd8108f912f32c895117e2970b6d4fbbecbe42a1"
+  integrity sha1-vYEI+RLzLIlRF+KXC21Pu+y+QqE=
   dependencies:
     "@types/geojson" "*"
 

@@ -1,8 +1,8 @@
 # 1 简介
 
-使用 `vite2` 创建 React17 & Vue3 项目。
+使用 `Vite2` 创建 `React17`、`Vue3`、`Svelte` 项目。
 
-每个前端框架提供下列类 gis 库的 `Hello World` 代码。
+每个前端框架提供下列 gis 或类 gis 库的 `Hello World` 代码。
 
 - openlayers@6.5
 - cesium.js@1.81
@@ -50,7 +50,7 @@ window['CESIUM_BASE_URL'] = `path/to/cesium/Source/`
 
 # 2 Future
 
-- 使用 svelte 试写一次
+- 使用原生 js+css+html 试写一次
 
 
 
