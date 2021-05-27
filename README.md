@@ -9,6 +9,7 @@
 - leaflet@1.7.1
 - mapboxgl@1.13.1
 - openglobus@0.8.10
+- arcgis jsapi@4.19
 
 
 
@@ -43,7 +44,7 @@ window['CESIUM_BASE_URL'] = `path/to/cesium/Source/`
 
 ## ④ arcgis 注意
 
-详细的文档写在子目录中了。
+详细的文档写在子目录中了，主要是 `assets` 目录的预复制操作，这点和 Cesium 的操作略像。读者可以自己手动试试将 `esriConfig.assetsPath`  配为部署好的地址，也可以像我 Cesium 例子一样设置开发时的目录，即 `esriConfig.assetsPath = "http://localhost:3000/node_modules/@arcgis/core/assets/"` （我没测试过，留给读者自己试吧）。
 
 
 
